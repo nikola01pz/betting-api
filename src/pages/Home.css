@@ -2,7 +2,7 @@ body {
   background-color: rgb(188, 199, 233);
 }
 
-table {
+.table {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -12,44 +12,46 @@ table {
 th,
 td {
   text-align: center;
+  padding: 2px;
 }
 
 th {
-  background-color: rgb(131, 138, 184);
+  background-color: rgb(150, 156, 199);
   font-weight: bold;
 }
 
 tr:nth-child(odd) {
-  background-color: #b8bcdf;
+  background-color: #c0c3df;
 }
 
 tr:nth-child(even) {
   background-color: #cad2ec;
 }
 
-.game {
+.table_title {
+  text-align: left;
+}
+
+.table_game {
   text-align: left;
   width: 40%;
 }
 
-.statistics {
-  width: 5%;
+.table_statistics {
+  width: 3%;
 }
 
-.time {
+.table_time {
   max-width: 2rem;
   width: 6%;
 }
 
 
-.tip {
+.table_tip {
   width: 3%;
 }
 
-.tv_channel {
+.table_tv {
   width: 3%;
 }
 
-.table_title {
-  text-align: left;
-}

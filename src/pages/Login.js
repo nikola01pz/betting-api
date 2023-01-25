@@ -5,12 +5,12 @@ import './Login.css'
 export default function Login() {
   return (
     <form className="login-form">
-      <label className="text">
-        Username:
+      <label>
+        User:
         <input type="text" name="username" placeholder="Enter username or email" />
       </label>
       <br />
-      <label className="text">
+      <label>
         Password:
         <input type="password" name="password" placeholder="Enter password" />
       </label>
