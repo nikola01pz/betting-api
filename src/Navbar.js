@@ -9,7 +9,7 @@ export default function Navbar(){
       BetIt
     </Link>
     <ul>
-      <CustomLink to="">Home</CustomLink>
+      <CustomLink to="/">Home</CustomLink>
       <CustomLink to="/login">Login</CustomLink>
       <CustomLink to="/register">Register</CustomLink>
       
