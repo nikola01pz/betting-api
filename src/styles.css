@@ -149,11 +149,21 @@ body {
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+
+  input:focus{
+    outline:none;
+  }
   
   label {
     font-weight: 600;
     color: rgb(6, 8, 151);
     font-size: 1.25rem;
+  }
+
+  .submit-message{
+    color: rgb(6, 8, 151);
+    padding-top: 1rem;
+    text-align: center;
   }
 
   
