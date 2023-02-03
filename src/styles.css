@@ -1,169 +1,179 @@
-*{
-    box-sizing:border-box;
+* {
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    background-color: rgb(188, 199, 233);
-  }
+  margin: 0;
+  background-color: rgb(188, 199, 233);
+}
 
-.container{
-    margin: 1rem;
+.container {
+  margin: 1rem;
 }
 
 /* Navbar */
 
-.nav{
-    background-color: rgb(9, 62, 175);
-    color: white;
-    display: flex;
-    justify-content: space-between;
+.nav {
+  background-color: rgb(9, 62, 175);
+  color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
-.site-title{
-    font-size: 2rem;
+.site-title {
+  font-size: 2rem;
 }
 
-.nav ul{
-    padding: 0.5rem;
-    margin: 0;
-    font-size: 1.25rem;
-    list-style: none;
-    display: flex;
-    gap: 1rem;
+.nav ul {
+  padding: 0.5rem;
+  margin: 0;
+  font-size: 1.25rem;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
 }
 
-.nav a{
-    color: inherit;
-    text-decoration: none;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 0.75rem;
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem;
 }
 
-.nav li.active{
-    background-color: rgb(36, 79, 172);
+.nav li.active {
+  background-color: rgb(36, 79, 172);
 }
 
-.nav li:hover{
-    background-color: rgb(36, 79, 172);
+.nav li:hover {
+  background-color: rgb(36, 79, 172);
 }
 
 /* Home Table*/
 
 .table {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 1.5rem;
-  }
-  
-  th,
-  td {
-    text-align: center;
-    padding: 2px;
-  }
-  
-  th {
-    background-color: rgb(150, 156, 199);
-    font-weight: bold;
-  }
-  
-  tr:nth-child(odd) {
-    background-color: #c0c3df;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #cad2ec;
-  }
-  
-  .table_title {
-    text-align: left;
-  }
-  
-  .table_game {
-    text-align: left;
-    width: auto;
-  }
-  
-  .table_statistics {
-    width: 3%;
-  }
-  
-  .table_time {
-    width: 8%;
-  }
-  
-  
-  .table_tip {
-    width: 3%;
-  }
-  
-  .table_tv {
-    width: 3%;
-  }
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1.5rem;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 2px;
+}
+
+th {
+  background-color: rgb(150, 156, 199);
+  font-weight: bold;
+}
+
+tr:nth-child(odd) {
+  background-color: #c0c3df;
+}
+
+tr:nth-child(even) {
+  background-color: #cad2ec;
+}
+
+.table_title {
+  text-align: left;
+  font-size: 1.15rem;
+  font-weight: bolder;
+}
+
+.table_game {
+  text-align: left;
+  width: auto;
+}
+
+.table_statistics {
+  width: 3%;
+}
+
+.table_time {
+  width: 8%;
+}
+
+
+.table_tip {
+  width: 3%;
+}
+
+.table_tv {
+  width: 3%;
+}
 
 /* Register */
 
 .register-form {
-    width: 20%;
-    margin: auto;
-    text-align: center;
-    align-items: center;
-  }
-  
-  .reg-button {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    color: rgb(6, 8, 151);
-    font-weight: bold;
-  }
+  width: 20%;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.reg-button {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: rgb(6, 8, 151);
+  font-weight: bold;
+}
+
+
+.reg-rules {
+  margin: auto;
+  width: 50%;
+  font-weight: 500;
+  color: rgb(6, 8, 151);
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
 
 /* Login */
 
-  .login-form {
-    width: 20%;
-    margin: auto;
-    text-align: center;
-    align-items: center;
-  }
-  
-  .log-button {
-    width: 50%;
-    color: rgb(6, 8, 151);
-    font-weight: bold;
-  }
+.login-form {
+  width: 20%;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
 
-  /* Register and Login */
+.log-button {
+  width: 50%;
+  color: rgb(6, 8, 151);
+  font-weight: bold;
+}
 
-  input{
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
+/* Register and Login */
 
-  input:focus{
-    outline:none;
-  }
-  
-  label {
-    font-weight: 600;
-    color: rgb(6, 8, 151);
-    font-size: 1.25rem;
-  }
+input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
 
-  .submit-message{
-    color: rgb(6, 8, 151);
-    padding-top: 1rem;
-    text-align: center;
-  }
+input:focus {
+  outline: none;
+}
 
-  
+label {
+  font-weight: 600;
+  color: rgb(6, 8, 151);
+  font-size: 1.25rem;
+}
+
+.submit-message {
+  color: rgb(6, 8, 151);
+  padding-top: 1rem;
+  text-align: center;
+}

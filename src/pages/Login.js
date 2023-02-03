@@ -6,7 +6,7 @@ export default function Login() {
   const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
 
-  const handleSubmit = async (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
     try {
       const response = await axios.post('http://localhost:5000/login',{
@@ -28,7 +28,7 @@ export default function Login() {
   }
 
   return (
-    <form className="login-form" onSubmit={handleSubmit}>
+    <form className="login-form" onSubmit={handleLogin}>
       <label>
         User:
         <input type="text" name="username" placeholder="Enter username or email" value={user} onChange={(e) => setUser(e.target.value)}/>
