@@ -8,7 +8,28 @@ body {
 }
 
 .container {
-  margin: 1rem;
+  margin: 2rem;
+  margin-top: 1rem;
+}
+
+.grid-container{
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+}
+
+.grid-item-1{
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  background-color: #cad2ec;
+  height:fit-content;
+}
+
+.grid-item-2{
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  background-color: #cad2ec;;
+  height:fit-content;
 }
 
 /* Navbar */
@@ -22,6 +43,8 @@ body {
 
 .site-title {
   font-size: 2rem;
+  font-family:Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
 
 .nav ul {
@@ -43,45 +66,43 @@ body {
 }
 
 .nav li.active {
+  border-radius: 0.25rem;
   background-color: rgb(36, 79, 172);
 }
 
 .nav li:hover {
+  border-radius: 0.25rem;
   background-color: rgb(36, 79, 172);
 }
 
 /* Home Table*/
 
-.table {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 1.5rem;
+.table-offers {
+  padding: 0.5rem;
 }
 
 th,
 td {
   text-align: center;
-  padding: 2px;
+  padding: 0.25rem;
 }
 
 th {
-  background-color: rgb(150, 156, 199);
-  font-weight: bold;
+  padding: 0.5rem;
+  color: white;
+  background-color: rgb(24, 77, 190);
+  font-weight: normal;
 }
 
-tr:nth-child(odd) {
+tr{
   background-color: #c0c3df;
 }
 
-tr:nth-child(even) {
-  background-color: #cad2ec;
-}
-
-.table_title {
+.table_title{
+  border-top-left-radius: 0.25rem;
   text-align: left;
   font-size: 1.15rem;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 .table_game {
@@ -94,7 +115,7 @@ tr:nth-child(even) {
 }
 
 .table_time {
-  width: 8%;
+  width: 10%;
 }
 
 
@@ -102,9 +123,59 @@ tr:nth-child(even) {
   width: 3%;
 }
 
+.table_tipf2 {
+  border-top-right-radius: 0.25rem;
+  width: 3%;
+}
+
+
 .table_tv {
   width: 3%;
 }
+
+.bet-slip-offer{
+  width: 100%;
+}
+
+/* Bet slip */
+
+.table-bet-slip{
+  width: 100%;
+  padding: 0.5rem;
+  padding-bottom: 0rem;
+}
+
+.bet-slip-title{
+  border-top-left-radius: 0.25rem;
+  text-align: left;
+}
+
+.bet-slip-clear-all{
+  border-top-right-radius: 0.25rem;
+  width: fit-content;
+}
+
+.bet-slip-offer-name{
+  text-align: left;
+}
+
+.stake-input{
+  border-radius: 0.25rem;
+  width: 74%;
+  margin-left: 2%;
+}
+
+.payment-button{
+  border-radius: 0.25rem;
+  width: 20%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+p{
+  padding-left: 0.75rem;
+}
+
 
 /* Register */
 
