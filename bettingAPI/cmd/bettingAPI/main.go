@@ -3,7 +3,7 @@ package main
 import (
 	bethttp "bettingAPI/internal/http"
 	"bettingAPI/internal/mysql"
-	"bettingAPI/internal/source"
+	// "bettingAPI/internal/source"
 	"log"
 	"net/http"
 
@@ -16,10 +16,12 @@ func main() {
 	db := mysql.NewDB()
 	hdl := bethttp.NewHandler(db)
 
+	/*
 	offers := source.GetAllOffersFromSource()
 	db.InsertOffers(offers)
 	db.InsertTips(offers)
 	db.InsertLeagues(source.GetAllLeaguesFromSource())
+	*/
 
 	router := mux.NewRouter()
 	headers := handlers.AllowedHeaders([]string{"X-Requested-With", "Content-Type", "Authorization"})

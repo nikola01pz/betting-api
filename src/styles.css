@@ -15,14 +15,13 @@ body {
 .grid-container{
   display: grid;
   grid-template-columns: 3fr 1fr;
-  gap: 20px;
+  gap: 1rem;
 }
 
 .grid-item-1{
   padding: 0.2rem;
+  background-color: #cad2ec;;
   border-radius: 0.5rem;
-  background-color: #cad2ec;
-  height:fit-content;
 }
 
 .grid-item-2{
@@ -75,14 +74,9 @@ body {
   background-color: rgb(36, 79, 172);
 }
 
-/* Home Table*/
+/* Tables */
 
-.table-offers {
-  padding: 0.5rem;
-}
-
-th,
-td {
+th, td {
   text-align: center;
   padding: 0.25rem;
 }
@@ -98,82 +92,94 @@ tr{
   background-color: #c0c3df;
 }
 
-.table_title{
+/* Home Table*/
+
+.table-offers {
+  margin: 0.5rem;
+  margin-top: 1.5rem;
+  border-spacing: 0 1px;
+}
+
+.table-offers:first-child {
+  margin-top: 0.5rem;
+}
+
+.table-offers-title {
   border-top-left-radius: 0.25rem;
   text-align: left;
   font-size: 1.15rem;
-  font-weight: bold;
 }
 
-.table_game {
+.table-offers-game {
   text-align: left;
   width: auto;
 }
 
-.table_statistics {
+.table-offers-statistics {
   width: 3%;
 }
 
-.table_time {
+.table-offers-time {
   width: 10%;
 }
 
 
-.table_tip {
-  width: 3%;
+.table-offers-tip {
+  width: 4%;
 }
 
-.table_tipf2 {
+.table-offers-tipf2 {
   border-top-right-radius: 0.25rem;
-  width: 3%;
+  width: 4%;
 }
 
 
-.table_tv {
+.table-offers-tv {
   width: 3%;
-}
-
-.bet-slip-offer{
-  width: 100%;
 }
 
 /* Bet slip */
 
-.table-bet-slip{
-  width: 100%;
-  padding: 0.5rem;
-  padding-bottom: 0rem;
+.table-bet-slip {
+  margin: 0.5rem;
+  border-spacing: 0 1px;
 }
 
-.bet-slip-title{
+.bet-slip-title {
   border-top-left-radius: 0.25rem;
+  font-size: 1.15rem;
+  width: 78%;
   text-align: left;
 }
 
-.bet-slip-clear-all{
+.bet-slip-clear-all {
   border-top-right-radius: 0.25rem;
-  width: fit-content;
+  width: 22%;
 }
 
-.bet-slip-offer-name{
+.bet-slip-offer-name {
   text-align: left;
 }
 
-.stake-input{
+.stake-input {
   border-radius: 0.25rem;
   width: 74%;
   margin-left: 2%;
 }
 
-.payment-button{
+.payment-button {
+  color: rgb(12, 15, 175);
+  font-weight: bold;
   border-radius: 0.25rem;
   width: 20%;
   margin-left: 2%;
   margin-right: 2%;
 }
 
-p{
+.bet-slip-total-count {
   padding-left: 0.75rem;
+  color: rgb(12, 15, 175);
+  font-weight: bold;
 }
 
 
@@ -200,10 +206,10 @@ p{
 
 .reg-rules {
   margin: auto;
-  width: 50%;
+  width: 25%;
   font-weight: 500;
   color: rgb(6, 8, 151);
-  text-align: center;
+  text-align: left;
   padding-bottom: 0.5rem;
 }
 
