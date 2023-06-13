@@ -1,5 +1,7 @@
 import React from "react"
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
+import Login from "./Login"
+import "./../styles/navbar.css"
 
 export default function Navbar(){
   return (
@@ -8,9 +10,9 @@ export default function Navbar(){
         BetIt
       </Link>
       <ul>
-        <CustomLink to="/">Home</CustomLink>
-        <CustomLink to="/login">Login</CustomLink>
+        <Login/>
         <CustomLink to="/register">Register</CustomLink>
+        <CustomLink to="/">Live bets</CustomLink>
       </ul>
     </nav>
   )

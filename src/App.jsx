@@ -1,9 +1,9 @@
 import React from "react"
-import Navbar from "./Navbar"
+import Navbar from "./components/Navbar"
 import Register from "./pages/Register"
-import Login from "./pages/Login"
 import Home from "./pages/Home"
 import { Route, Routes } from "react-router-dom"
+
 
 
 export default function App(){
@@ -13,7 +13,6 @@ export default function App(){
       <div className="container">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </div>

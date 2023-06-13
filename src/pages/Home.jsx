@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
+import "./../styles/tables.css"
+import "./../styles/bet-slip.css"
+import "./../styles/home.css"
 
 export default function Home() {
   const [leagueOffersData, setLeagueOffersData] = useState([])
@@ -96,8 +99,10 @@ export default function Home() {
       <div className="grid-item-2">
         <table className="table-bet-slip">
           <thead>
-            <th className="bet-slip-title" >My bet slip</th>
-            <th colSpan="2" className="bet-slip-clear-all">Clear All</th>
+            <tr>  
+              <th className="bet-slip-title" >My bet slip</th>
+              <th className="bet-slip-clear-all" colSpan="2" >Clear All</th>
+            </tr>
           </thead>
           
           <tbody>

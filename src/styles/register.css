@@ -1,0 +1,51 @@
+.register-rules {
+  margin: auto;
+  width: 50%;
+  font-weight: 500;
+  color: rgb(6, 8, 151);
+  text-align: left;
+  padding-bottom: 0.5rem;
+}
+
+.register-form {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.button-register {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: rgb(6, 8, 151);
+  font-weight: bold;
+}
+
+.register-input {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+}
+
+.register-label {
+  display: inline-block;
+  width: 20%;
+  text-align: left;
+  font-weight: 600;
+  color: rgb(6, 8, 151);
+  font-size: 1.25rem;
+}
+
+.register-div {
+  width: 100%;
+}

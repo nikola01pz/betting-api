@@ -1,0 +1,26 @@
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.login-input {
+  margin-left: 10px;
+  padding: 0.25rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 8rem;
+}
+
+.log-button {
+  color: white;
+  background-color: transparent;
+  font-size: 1.25rem;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-message {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}

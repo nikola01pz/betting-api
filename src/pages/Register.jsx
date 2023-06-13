@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import axios from "axios"
+import "./../styles/register.css"
 
 export default function Register() {
   const [email, setEmail] = useState("")
@@ -36,7 +37,7 @@ export default function Register() {
 
   return (
     <>
-      <ul className="reg-rules">
+      <ul className="register-rules">
         <li>Email adress must be valid and not used yet</li>
         <li>Username must be unique and contain atleast three letters, no numbers or special signs allowed</li>
         <li>Password must contain atleast 8 symbols including upper letter, number and special sign</li>
@@ -45,37 +46,37 @@ export default function Register() {
       </ul>
 
       <form className="register-form" onSubmit={handleRegister}>
-        <label >
-          Email:
-          <input type="email" name="email" placeholder="Enter email" value={email} 
+        <div className="register-div">
+          <label className="register-label">Email:</label>
+          <input className="register-input" type="email" name="email" placeholder="Enter email" value={email} 
             onChange={(e) => setEmail(e.target.value)}/>
-        </label>
-        <label >
-          Username:
-          <input type="text" name="username" placeholder="Enter username" value={username} 
+        </div>
+        <div className="register-div">
+          <label className="register-label">Username:</label>
+          <input className="register-input" type="text" name="username" placeholder="Enter username" value={username} 
             onChange={(e) => setUsername(e.target.value)}/>
-        </label>
-        <label>
-          Password:
-          <input type="password" name="password" placeholder="Enter password" value={password} 
+        </div>
+        <div className="register-div">
+          <label className="register-label">Password:</label>
+          <input className="register-input" type="password" name="password" placeholder="Enter password" value={password} 
             onChange={(e) => setPassword(e.target.value)}/>
-        </label>
-        <label>
-          First Name:
-          <input type="text" name="first_name" placeholder="Enter first name" value={first_name} 
+        </div>
+        <div className="register-div">
+          <label className="register-label">First name:</label>
+          <input className="register-input" type="text" name="first_name" placeholder="Enter first name" value={first_name} 
             onChange={(e) => setFirstName(e.target.value)}/>
-        </label>
-        <label>
-          Last Name:
-          <input type="text" name="last_name" placeholder="Enter last name" value={last_name} 
+        </div>
+        <div className="register-div">
+          <label className="register-label">Last name:</label>
+          <input className="register-input" type="text" name="last_name" placeholder="Enter last name" value={last_name} 
             onChange={(e) => setLastName(e.target.value)}/>
-        </label>
-        <label>
-          Birthdate:
-          <input type="date" name="birth_date" placeholder="Enter birthdate" value={birth_date} 
+        </div>
+        <div className="register-div">
+          <label className="register-label">Birthdate:</label>
+          <input className="register-input" type="date" name="birth_date" placeholder="Enter birthdate" value={birth_date} 
             onChange={(e) => setBirthdate(e.target.value)}/>
-        </label>
-        <input className="reg-button" type="submit" value="Register" />
+        </div>
+        <input className="button-register" type="submit" value="Register" />
         {message && <div className="submit-message">{message}</div>}
       </form>
     </>

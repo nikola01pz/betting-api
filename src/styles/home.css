@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background-color: rgb(188, 199, 233);
+  }
+  
+  .container {
+    margin: 2rem;
+    margin-top: 1rem;
+  }
+  
+  .grid-container{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+  }
+  
+  .grid-item-1{
+    padding: 0.2rem;
+    background-color: #cad2ec;;
+    border-radius: 0.5rem;
+  }
+  
+  .grid-item-2{
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    background-color: #cad2ec;;
+    height:fit-content;
+  }

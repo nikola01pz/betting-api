@@ -1,0 +1,61 @@
+th, td {
+  text-align: center;
+  padding: 0.25rem;
+}
+
+th {
+  padding: 0.5rem;
+  color: white;
+  background-color: rgb(24, 77, 190);
+  font-weight: normal;
+}
+
+tr{
+  background-color: #c0c3df;
+}
+
+/* Home Table*/
+
+.table-offers {
+  margin: 0.5rem;
+  margin-top: 1.5rem;
+  border-spacing: 0 1px;
+}
+
+.table-offers:first-child {
+  margin-top: 0.5rem;
+}
+
+.table-offers-title {
+  border-top-left-radius: 0.25rem;
+  text-align: left;
+  font-size: 1.15rem;
+}
+
+.table-offers-game {
+  text-align: left;
+  width: auto;
+}
+
+.table-offers-statistics {
+  width: 3%;
+}
+
+.table-offers-time {
+  width: 10%;
+}
+
+
+.table-offers-tip {
+  width: 4%;
+}
+
+.table-offers-tipf2 {
+  border-top-right-radius: 0.25rem;
+  width: 4%;
+}
+
+
+.table-offers-tv {
+  width: 3%;
+}
