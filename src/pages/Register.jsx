@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import axios from "axios"
+import RegistrationRules from "./../components/RegistrationRules"
 import "./../styles/register.css"
 
 export default function Register() {
@@ -28,7 +29,7 @@ export default function Register() {
     }catch(error){
       console.error(error)
       console.log(error.response)
-      setMessage("Unsuccessfull register! Please try again.")
+      setMessage("Unsuccessful register! Please try again.")
       setTimeout(() => {
         setMessage("")
       }, 3000)
@@ -37,13 +38,7 @@ export default function Register() {
 
   return (
     <>
-      <ul className="register-rules">
-        <li>Email adress must be valid and not used yet</li>
-        <li>Username must be unique and contain atleast three letters, no numbers or special signs allowed</li>
-        <li>Password must contain atleast 8 symbols including upper letter, number and special sign</li>
-        <li>First and last name can only contain letters</li>
-        <li>You must be atleast 18 years old to register</li>
-      </ul>
+      <RegistrationRules/>
 
       <form className="register-form" onSubmit={handleRegister}>
         <div className="register-div">
