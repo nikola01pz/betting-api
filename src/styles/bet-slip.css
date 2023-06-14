@@ -1,18 +1,18 @@
 .table-bet-slip {
     margin: 0.5rem;
     border-spacing: 0 1px;
+    width: fit-content;
 }
 
 .bet-slip-title {
     border-top-left-radius: 0.25rem;
     font-size: 1.15rem;
-    width: 78%;
     text-align: left;
+    width: 100%;
 }
 
 .bet-slip-clear-all {
     border-top-right-radius: 0.25rem;
-    width: 22%;
 }
 
 .bet-slip-offer-name {

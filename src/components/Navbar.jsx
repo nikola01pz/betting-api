@@ -11,7 +11,6 @@ export default function Navbar(){
       </Link>
       <ul>
         <Login/>
-        <CustomLink to="/register">Register</CustomLink>
         <CustomLink to="/">Live bets</CustomLink>
       </ul>
     </nav>

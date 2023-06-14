@@ -1,8 +1,11 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import "./../styles/login.css"
 
 export default function Login() {
+  const navigate = useNavigate()
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
   const [message, setMessage] = useState("")
@@ -36,7 +39,8 @@ export default function Login() {
   }
 
   const handleLogout = () => {
-    setIsLoggedIn(false);
+    setIsLoggedIn(false)
+    navigate("/")
   }
 
 
@@ -54,10 +58,13 @@ export default function Login() {
             {loggedUser.balance && (
               <span>Balance: €{loggedUser.balance}</span>
             )}
-            <button className="add-balance">Deposit</button>
+            <Link to="/add-funds">
+              <button className="add-balance">Deposit</button>
+            </Link>
+            
           </div>
           
-          <button className="log-button" onClick={handleLogout}>
+          <button className="logout-button" onClick={handleLogout}>
             Logout
           </button>
         </>
@@ -70,9 +77,12 @@ export default function Login() {
               <input  className="login-input" type="password" name="password" placeholder="password" value={password} 
                 onChange={(e) => setPassword(e.target.value)}/>
             </label>
-            <input className="log-button" type="submit" value="Login" />
+            <input className="login-button" type="submit" value="Login" />
             {message && <div className="submit-message">{message}</div>}
           </form>
+          <Link to="/register">
+              <button className="register-button">Register</button>
+            </Link>
         </>
       )}
     </>
