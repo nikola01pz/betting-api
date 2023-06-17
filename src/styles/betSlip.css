@@ -1,21 +1,26 @@
-.table-bet-slip {
+.table-betSlip {
     margin: 0.5rem;
     border-spacing: 0 1px;
     width: fit-content;
 }
 
-.bet-slip-title {
+.betSlip-title {
     border-top-left-radius: 0.25rem;
     font-size: 1.15rem;
+    text-align: left;
+}
+
+.betSlip-clearAll {
+    border-top-right-radius: 0.25rem;
+    cursor: pointer;
+}
+
+.betSlip-game {
     text-align: left;
     width: 100%;
 }
 
-.bet-slip-clear-all {
-    border-top-right-radius: 0.25rem;
-}
-
-.bet-slip-offer-name {
+.betSlip-offer-name {
     text-align: left;
 }
 
@@ -41,10 +46,9 @@
     margin-right: 2%;
 }
 
-.bet-slip-total-count {
+.betSlip-total-count {
     padding-left: 0.75rem;
     color: rgb(12, 15, 175);
-    font-weight: bold;
 }
 
 input:focus {

@@ -1,21 +1,3 @@
-th, td {
-  text-align: center;
-  padding: 0.25rem;
-}
-
-th {
-  padding: 0.5rem;
-  color: white;
-  background-color: rgb(24, 77, 190);
-  font-weight: normal;
-}
-
-tr{
-  background-color: #c0c3df;
-}
-
-/* Home Table*/
-
 .table-offers {
   margin: 0.5rem;
   margin-top: 1.5rem;
@@ -35,10 +17,12 @@ tr{
 .table-offers-game {
   text-align: left;
   width: auto;
+  cursor: pointer;
 }
 
 .table-offers-statistics {
   width: 3%;
+  cursor: pointer;
 }
 
 .table-offers-time {
@@ -48,13 +32,13 @@ tr{
 
 .table-offers-tip {
   width: 4%;
+  cursor: pointer;
 }
 
 .table-offers-tipf2 {
   border-top-right-radius: 0.25rem;
   width: 4%;
 }
-
 
 .table-offers-tv {
   width: 3%;

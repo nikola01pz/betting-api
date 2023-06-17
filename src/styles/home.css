@@ -30,3 +30,23 @@ body {
   background-color: #cad2ec;;
   height:fit-content;
 }
+
+th, td {
+  text-align: center;
+  padding: 0.25rem;
+}
+
+th {
+  padding: 0.5rem;
+  color: white;
+  background-color: rgb(24, 77, 190);
+  font-weight: normal;
+}
+
+tr{
+  background-color: #c0c3df;
+}
+
+td:hover {
+  background-color: #9599be;
+}

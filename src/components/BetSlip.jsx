@@ -1,73 +1,55 @@
 import React from "react"
 
-export default function BetSlip() {
+export default function BetSlip( {betSlip, setBetSlip, stake, setStake}) {
+  function calculateTotalCoefficient(betSlip) {
+    const totalCoefficient = betSlip.reduce(
+      (accumulator, offer) => accumulator * offer.coefficient, 1)
+    return totalCoefficient.toFixed(2)
+  }
+
+  function handleClearAll() {
+    setBetSlip([])
+  }
 
   return (
     <>
-        <table className="table-bet-slip">
-          <thead>
-            <tr>  
-              <th className="bet-slip-title" >My bet slip</th>
-              <th className="bet-slip-clear-all" colSpan="2" >Clear All</th>
-            </tr>
-          </thead>
-          
-          <tbody>
-            <tr>
-              <td className="bet-slip-offer-name">Dinamo Zagreb-Olymp.Pireus</td>
-              <td>1</td>
-              <td>1.55</td>
-            </tr>
-            <tr>
-              <td className="bet-slip-offer-name">CSKA Moskva-Manchester Utd</td>
-              <td>f+2</td>
-              <td>3.1</td>
-            </tr>
-            <tr>
-              <td className="bet-slip-offer-name">Wolfsburg-PSV Eindhoven</td>
-              <td>X</td>
-              <td>1.7</td>
-            </tr>
-            <tr>
-              <td className="bet-slip-offer-name">Ćorić B.-Donskoy E.</td>
-              <td>2</td>
-              <td>1.5</td>
-            </tr>
-            <tr>
-              <td className="bet-slip-offer-name">Malmö FF-Shakhtar Donetsk</td>
-              <td>1X</td>
-              <td>1.2</td>
-            </tr>
-            <tr>
-              <td className="bet-slip-offer-name">CSKA Moskva-Manchester Utd</td>
-              <td>2</td>
-              <td>3.1</td>
-            </tr>
-            <tr>
-              <td className="bet-slip-offer-name">Wolfsburg-PSV Eindhoven</td>
-              <td>1</td>
-              <td>1.7</td>
-            </tr>
-            <tr>
-              <td className="bet-slip-offer-name">Ćorić B.-Donskoy E.</td>
-              <td>2</td>
-              <td>1.5</td>
-            </tr>
-            <tr>
-              <td className="bet-slip-offer-name">Malmö FF-Shakhtar Donetsk</td>
-              <td>X2</td>
-              <td>1.2</td>
-            </tr>
-          </tbody>
-        </table>
+      <table className="table-betSlip">
+        <thead>
+          <tr>
+            <th className="betSlip-title" >My bet slip</th>
+            <th className="betSlip-clearAll" colSpan="2" onClick={handleClearAll}>Clear All</th>
+          </tr>
+          <tr>  
+            <th className="betSlip-game">Game</th>
+            <th>Tip</th>
+            <th>Coef</th>
+          </tr>
+        </thead>
 
-        <div className="bet-slip-total-count">
-          Total coefficient: 139.48
-          <br/>
-          Payout: -
-        </div>
-        <input className="stake-input" type="text" placeholder="Minimal stake is 0.25" maxLength="6"/>
-        <input className="payment-button" type="submit" value="Bet" />
+        <tbody>
+          {betSlip.map((offer, index) => (
+            <tr key={index}>
+              <td className="betSlip-offer-name">{offer.game}</td>
+              <td>{offer.type}</td>
+              <td>{offer.coefficient}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <div className="betSlip-total-count">
+        Treble: {calculateTotalCoefficient(betSlip)}
+        <br/>
+        Payout: {(stake*calculateTotalCoefficient(betSlip)*0.85).toFixed(2)}€
+        <br/>
+        15% Tax: {(stake*calculateTotalCoefficient(betSlip)*0.15).toFixed(2)}€
+      </div>
+      <input className="stake-input" 
+        type="text" 
+        placeholder="Minimal stake is 0.25€" 
+        maxLength="6" value={stake} 
+        onChange={(e) => setStake(e.target.value)} />
+      <input className="payment-button" type="submit" value="Bet" />
     </>
   )
 }
