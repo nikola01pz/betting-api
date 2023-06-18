@@ -28,7 +28,7 @@
 .button-deleteGame {
     color: rgb(12, 15, 175);
     border: none;
-    border-radius: 0.75rem;
+    border-radius: 0.25rem;
     width: fit-content;
 }
 
@@ -63,10 +63,21 @@
     margin-right: 2%;
 }
 
-.betSlip-total-count {
+.betSlip-totalCount {
     padding-left: 0.75rem;
 }
 
-input:focus {
-    outline: none;
+.betSlip-payout {
+    font-size: 1.15rem;
+    font-weight: 300;
+    padding: 0.25rem;
+    background-color:  #c0c3df;
+    border: none;
+    border-radius: 0.25rem;
+    width: fit-content;
+}
+
+.betSlip-messages {
+    padding-left: 0.75rem;
+    text-align: center;
 }

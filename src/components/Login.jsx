@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 import axios from "axios"
 import "./../styles/login.css"
 
-export default function Login() {
+export default function Login({handleLoginResponse}) {
   const navigate = useNavigate()
   const [user, setUser] = useState("")
   const [password, setPassword] = useState("")
@@ -26,12 +26,20 @@ export default function Login() {
         password,
       })
       const {balance, email, first_name, last_name, username} = response.data
-      setLoggedUser({balance, email, first_name, last_name, username})
+      const loggedUser = {
+        balance,
+        email,
+        first_name,
+        last_name,
+        username,
+      }
+      setLoggedUser(loggedUser)
       setIsLoggedIn(true)
       console.log(response)
+      handleLoginResponse(loggedUser)
     } catch(error) {
       console.error(error)
-      setMessage("failed");
+      setMessage("failed")
       setTimeout(() => {
         setMessage("")
       }, 2000)
@@ -42,7 +50,6 @@ export default function Login() {
     setIsLoggedIn(false)
     navigate("/")
   }
-
 
   return (
     <>
@@ -61,20 +68,25 @@ export default function Login() {
             <Link to="/add-funds">
               <button className="add-balance">Deposit</button>
             </Link>
-            
           </div>
           
-          <button className="logout-button" onClick={handleLogout}>
-            Logout
-          </button>
+          <button className="logout-button" onClick={handleLogout}>Logout</button>
         </>
       ) : (
         <>
           <form className="login-form" onSubmit={handleLogin}>
             <label>
-              <input className="login-input" type="text" name="username" placeholder="username or email" value={user} 
+              <input className="login-input" 
+                type="text" 
+                name="username" 
+                placeholder="username or email" 
+                value={user} 
                 onChange={(e) => setUser(e.target.value)}/>
-              <input  className="login-input" type="password" name="password" placeholder="password" value={password} 
+              <input  className="login-input" 
+                type="password" 
+                name="password" 
+                placeholder="password" 
+                value={password} 
                 onChange={(e) => setPassword(e.target.value)}/>
             </label>
             <input className="login-button" type="submit" value="Login" />
@@ -82,7 +94,7 @@ export default function Login() {
           </form>
           <Link to="/register">
               <button className="register-button">Register</button>
-            </Link>
+          </Link>
         </>
       )}
     </>

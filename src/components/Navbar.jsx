@@ -3,14 +3,14 @@ import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import Login from "./Login"
 import "./../styles/navbar.css"
 
-export default function Navbar(){
+export default function Navbar({ handleLoginResponse }){
   return (
     <nav className="nav">
       <Link to="/" className="site-title">
         BetIt
       </Link>
       <ul>
-        <Login/>
+        <Login handleLoginResponse={handleLoginResponse} />
         <CustomLink to="/">Live bets</CustomLink>
       </ul>
     </nav>

@@ -72,31 +72,38 @@ export default function Offers( {addToBetSlip}) {
                       })}
                     </td>
                     <td className="table-offers-statistics">{offer.statistics ? "Yes" : "No"}</td>
-                    <td className="table-offers-tip" onClick={() => addToBetSlip(offer, offer.tips.find(tip => tip.Name === "1").Value, "1")}>
+                    <td className="table-offers-tip" onClick={() => 
+                      addToBetSlip(offer, offer.id, offer.tips.find(tip => tip.Name === "1").Value, "1")}>
                       {offer.tips.find(tip => tip.Name === "1") ? 
                         offer.tips.find(tip => tip.Name === "1").Value : "-"}
                     </td>
-                    <td className="table-offers-tip" onClick={() => addToBetSlip(offer, offer.tips.find(tip => tip.Name === "X").Value, "X")}>
+                    <td className="table-offers-tip" onClick={() => 
+                      addToBetSlip(offer, offer.id, offer.tips.find(tip => tip.Name === "X").Value, "X")}>
                       {offer.tips.find(tip => tip.Name === "X") ? 
                         offer.tips.find(tip => tip.Name === "X").Value : "-"}
                     </td>
-                    <td className="table-offers-tip" onClick={() => addToBetSlip(offer, offer.tips.find(tip => tip.Name === "2").Value, "2")}>
+                    <td className="table-offers-tip" onClick={() => 
+                      addToBetSlip(offer, offer.id, offer.tips.find(tip => tip.Name === "2").Value, "2")}>
                       {offer.tips.find(tip => tip.Name === "2") ? 
                         offer.tips.find(tip => tip.Name === "2").Value : "-"}
                     </td>
-                    <td className="table-offers-tip" onClick={() => addToBetSlip(offer, offer.tips.find(tip => tip.Name === "1X").Value, "1X")}>
+                    <td className="table-offers-tip" onClick={() => 
+                      addToBetSlip(offer, offer.id, offer.tips.find(tip => tip.Name === "1X").Value, "1X")}>
                       {offer.tips.find(tip => tip.Name === "1X") ? 
                         offer.tips.find(tip => tip.Name === "1X").Value : "-"}
                     </td>
-                    <td className="table-offers-tip" onClick={() => addToBetSlip(offer, offer.tips.find(tip => tip.Name === "X2").Value, "X2")}>
+                    <td className="table-offers-tip" onClick={() => 
+                      addToBetSlip(offer, offer.id, offer.tips.find(tip => tip.Name === "X2").Value, "X2")}>
                       {offer.tips.find(tip => tip.Name === "X2") ? 
                         offer.tips.find(tip => tip.Name === "X2").Value : "-"}
                     </td>
-                    <td className="table-offers-tip" onClick={() => addToBetSlip(offer, offer.tips.find(tip => tip.Name === "12").Value, "12")}>
+                    <td className="table-offers-tip" onClick={() => 
+                      addToBetSlip(offer, offer.id, offer.tips.find(tip => tip.Name === "12").Value, "12")}>
                       {offer.tips.find(tip => tip.Name === "12") ? 
                         offer.tips.find(tip => tip.Name === "12").Value : "-"}
                     </td>
-                    <td className="table-offers-tipf2" onClick={() => addToBetSlip(offer, offer.tips.find(tip => tip.Name === "f+2").Value, "f+2")}>
+                    <td className="table-offers-tipf2" onClick={() => 
+                      addToBetSlip(offer, offer.id, offer.tips.find(tip => tip.Name === "f+2").Value, "f+2")}>
                       {offer.tips.find(tip => tip.Name === "f+2") ? 
                         offer.tips.find(tip => tip.Name === "f+2").Value : "-"}
                     </td>

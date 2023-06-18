@@ -43,32 +43,55 @@ export default function Register() {
       <form className="register-form" onSubmit={handleRegister}>
         <div className="register-div">
           <label className="register-label">Email:</label>
-          <input className="register-input" type="email" name="email" placeholder="Enter email" value={email} 
+          <input className="register-input" 
+            type="email" 
+            name="email" 
+            placeholder="Enter email" 
+            value={email} 
             onChange={(e) => setEmail(e.target.value)}/>
         </div>
         <div className="register-div">
           <label className="register-label">Username:</label>
-          <input className="register-input" type="text" name="username" placeholder="Enter username" value={username} 
+          <input className="register-input" 
+            type="text" 
+            name="username" 
+            placeholder="Enter username" 
+            value={username} 
             onChange={(e) => setUsername(e.target.value)}/>
         </div>
         <div className="register-div">
           <label className="register-label">Password:</label>
-          <input className="register-input" type="password" name="password" placeholder="Enter password" value={password} 
+          <input className="register-input" 
+            type="password" name="password" 
+            placeholder="Enter password" 
+            value={password} 
             onChange={(e) => setPassword(e.target.value)}/>
         </div>
         <div className="register-div">
           <label className="register-label">First name:</label>
-          <input className="register-input" type="text" name="first_name" placeholder="Enter first name" value={first_name} 
+          <input className="register-input" 
+            type="text" 
+            name="first_name" 
+            placeholder="Enter first name" 
+            value={first_name} 
             onChange={(e) => setFirstName(e.target.value)}/>
         </div>
         <div className="register-div">
           <label className="register-label">Last name:</label>
-          <input className="register-input" type="text" name="last_name" placeholder="Enter last name" value={last_name} 
+          <input className="register-input" 
+            type="text" 
+            name="last_name" 
+            placeholder="Enter last name" 
+            value={last_name} 
             onChange={(e) => setLastName(e.target.value)}/>
         </div>
         <div className="register-div">
           <label className="register-label">Birthdate:</label>
-          <input className="register-input" type="date" name="birth_date" placeholder="Enter birthdate" value={birth_date} 
+          <input className="register-input" 
+            type="date" 
+            name="birth_date" 
+            placeholder="Enter birthdate" 
+            value={birth_date} 
             onChange={(e) => setBirthdate(e.target.value)}/>
         </div>
         <input className="button-register" type="submit" value="Register" />

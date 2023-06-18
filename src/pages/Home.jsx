@@ -5,18 +5,17 @@ import "./../styles/offers.css"
 import "./../styles/betSlip.css"
 import "./../styles/home.css"
 
-export default function Home() {
+export default function Home({ userData, handleLoginResponse }) {
   const [betSlip, setBetSlip] = useState([])
-  const [stake, setStake] = useState(0.25)
 
-  const addToBetSlip = (offer, coefficient, type) => {
+  const addToBetSlip = (offer, id, coefficient, type) => {
     const offerIndex = betSlip.findIndex((item) => item.game === offer.game)
     if (offerIndex !== -1) {
       const updatedBetSlip = [...betSlip]
-      updatedBetSlip[offerIndex] = { ...offer, coefficient, type }
+      updatedBetSlip[offerIndex] = { ...offer, id, coefficient, type }
       setBetSlip(updatedBetSlip)
     } else {
-      const newBetSlipItem = { ...offer, coefficient, type }
+      const newBetSlipItem = { ...offer, id, coefficient, type }
       setBetSlip((prevBetSlip) => [...prevBetSlip, newBetSlipItem])
     }
   }
@@ -27,12 +26,11 @@ export default function Home() {
         <Offers addToBetSlip={addToBetSlip} />
       </div>
       <div className="grid-betSlip">
-        <BetSlip
-          betSlip={betSlip}
-          setBetSlip={setBetSlip}
-          stake={stake}
-          setStake={setStake}
-        />
+        <BetSlip 
+          userData={userData} 
+          betSlip={betSlip} 
+          setBetSlip={setBetSlip} 
+          handleLoginResponse={handleLoginResponse} />
       </div>
     </div>
   )
