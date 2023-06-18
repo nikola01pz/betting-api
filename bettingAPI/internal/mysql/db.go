@@ -65,6 +65,7 @@ type LeagueOffers struct {
 }
 
 type OfferByID struct {
+	Id            int    `json:"id"`
 	Name          string `json:"game"`
 	Time          string `json:"time"`
 	TvChannel     string `json:"tv_channel"`
@@ -196,8 +197,8 @@ func (d *DB) GetLeagueOffers() []LeagueOffers {
 
 func (d *DB) GetOfferByID(offerID int) interface{} {
 	var offer OfferByID
-	row := d.conn.QueryRow("SELECT game, time_played, tv_channel, has_statistics from `bettingdb`.`offers` where `bettingdb`.`offers`.`id`=?", offerID)
-	err := row.Scan(&offer.Name, &offer.Time, &offer.TvChannel, &offer.HasStatistics)
+	row := d.conn.QueryRow("SELECT id, game, time_played, tv_channel, has_statistics from `bettingdb`.`offers` where `bettingdb`.`offers`.`id`=?", offerID)
+	err := row.Scan(&offer.Id, &offer.Name, &offer.Time, &offer.TvChannel, &offer.HasStatistics)
 	if err != nil {
 		log.Printf("Error getting offer by id: %s", err)
 	}
@@ -284,7 +285,7 @@ func (d *DB) UpdateUserBalance(user User, updatedUserBalance float32) error {
 	return nil
 }
 
-func (d *DB) InsertUserBetSlip(userBetSlip UserBetSlip, betSlip BetSlipRequest) error { 
+func (d *DB) InsertUserBetSlip(userBetSlip UserBetSlip, betSlip BetSlipRequest) error {
 	query1 := "INSERT INTO `bettingdb`.`user_bet_slips`(user_id, stake, coefficient, payout) VALUES(?,?,?,?)"
 	res, err := d.conn.Exec(query1, userBetSlip.UserID, userBetSlip.Stake, userBetSlip.Coefficient, userBetSlip.Payout)
 	if err != nil {
