@@ -35,9 +35,18 @@
   cursor: pointer;
 }
 
+.table-offers-tip:hover {
+  background-color: #9599be;
+}
+
+
 .table-offers-tipf2 {
   border-top-right-radius: 0.25rem;
   width: 4%;
+}
+
+.table-offers-tipf2:hover {
+  background-color: #9599be;
 }
 
 .table-offers-tv {

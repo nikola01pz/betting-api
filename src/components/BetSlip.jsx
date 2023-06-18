@@ -11,16 +11,26 @@ export default function BetSlip( {betSlip, setBetSlip, stake, setStake}) {
     setBetSlip([])
   }
 
+  function handleDeleteGame(index) {
+    const updatedBetSlip = [...betSlip]
+    updatedBetSlip.splice(index, 1)
+    setBetSlip(updatedBetSlip)
+  }
+
+  const totalCoefficient = calculateTotalCoefficient(betSlip)
+  const payout = (stake*totalCoefficient*0.85).toFixed(2)
+  const tax = (stake*totalCoefficient*0.15).toFixed(2)
+
   return (
     <>
       <table className="table-betSlip">
         <thead>
           <tr>
-            <th className="betSlip-title" >My bet slip</th>
-            <th className="betSlip-clearAll" colSpan="2" onClick={handleClearAll}>Clear All</th>
+            <th className="betSlip-title" colSpan="2">My bet slip</th>
+            <th className="betSlip-clearAll" colSpan="2" onClick={handleClearAll}>Delete All</th>
           </tr>
           <tr>  
-            <th className="betSlip-game">Game</th>
+            <th className="betSlip-game" colSpan="2">Game</th>
             <th>Tip</th>
             <th>Coef</th>
           </tr>
@@ -29,7 +39,10 @@ export default function BetSlip( {betSlip, setBetSlip, stake, setStake}) {
         <tbody>
           {betSlip.map((offer, index) => (
             <tr key={index}>
-              <td className="betSlip-offer-name">{offer.game}</td>
+              <td className="td-deleteGame"> 
+                <button className="button-deleteGame" onClick={() => handleDeleteGame(index)}>x</button>
+              </td>
+              <td className="betSlip-offerName">{offer.game}</td>
               <td>{offer.type}</td>
               <td>{offer.coefficient}</td>
             </tr>
@@ -38,11 +51,11 @@ export default function BetSlip( {betSlip, setBetSlip, stake, setStake}) {
       </table>
 
       <div className="betSlip-total-count">
-        Treble: {calculateTotalCoefficient(betSlip)}
-        <br/>
-        Payout: {(stake*calculateTotalCoefficient(betSlip)*0.85).toFixed(2)}€
-        <br/>
-        15% Tax: {(stake*calculateTotalCoefficient(betSlip)*0.15).toFixed(2)}€
+        Total Coefficient: {betSlip.length ? totalCoefficient : "-"}
+        <br />
+        Payout: {betSlip.length ? `${payout}€` : "-"}
+        <br />
+        15% Tax: {betSlip.length ? `${tax}€` : "-"}
       </div>
       <input className="stake-input" 
         type="text" 

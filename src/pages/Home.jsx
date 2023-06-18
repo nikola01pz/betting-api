@@ -19,7 +19,7 @@ export default function Home() {
       const newBetSlipItem = { ...offer, coefficient, type }
       setBetSlip((prevBetSlip) => [...prevBetSlip, newBetSlipItem])
     }
-  };
+  }
 
   return (
     <div className="grid-home">
