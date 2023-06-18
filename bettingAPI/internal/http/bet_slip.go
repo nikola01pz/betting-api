@@ -5,7 +5,7 @@ import (
 )
 
 func isStakeSufficient(stake float32) bool {
-	return stake >= 2
+	return stake >= 0.25
 }
 
 func hasSufficientFunds(balance, stake float32) bool {

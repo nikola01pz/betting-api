@@ -167,7 +167,7 @@ func (h *handler) HandleRegisterRequest(w http.ResponseWriter, r *http.Request) 
 }
 
 func (h *handler) HandleLoginRequest(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json") // ponavlja se pa izvuc u posebnu funkciju
+	w.Header().Set("Content-Type", "application/json")
 	body, err := io.ReadAll(r.Body)
 	if err != nil {
 		log.Printf("Error getting data from login form: %s", err)
@@ -250,7 +250,10 @@ func (h *handler) HandleBetSlipRequest(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	payout := totalCoefficient * betSlip.Stake
+	var tax float32 = 0.15
+
+	payout := totalCoefficient * betSlip.Stake * (1 - tax)
+
 	if payout > 10000 {
 		w.WriteHeader(http.StatusBadRequest)
 		return
