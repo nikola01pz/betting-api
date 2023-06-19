@@ -1,10 +1,13 @@
 import React, { useState } from "react"
 import axios from "axios"
+import { useRecoilState} from "recoil"
+import { balanceState } from "./atoms"
 
-export default function BetSlip( {userData, betSlip, setBetSlip}) {
+export default function BetSlip({ userData, betSlip, setBetSlip }) {
   const [stake, setStake] = useState(0.25)
   const [loginMessage, setLoginMessage] = useState("")
   const [betMessage, setBetMessage] = useState("")
+  const [userBalance, setUserBalance] = useRecoilState(balanceState)
 
   function calculateTotalCoefficient(betSlip) {
     const totalCoefficient = betSlip.reduce(
@@ -44,9 +47,9 @@ export default function BetSlip( {userData, betSlip, setBetSlip}) {
       bets: betSlip.map((offer) => ({
         offer: offer.id,
         tip: offer.type,
-      }))
+      })),
     }
-  
+
     try {
       const response = await axios.post("http://localhost:5000/bet_slip", newBetSlip)
       console.log("Request successful:", response)
@@ -54,21 +57,22 @@ export default function BetSlip( {userData, betSlip, setBetSlip}) {
       setTimeout(() => {
         setBetMessage("")
       }, 2000)
+      setUserBalance((prevBalance) => prevBalance - stake)
     } catch (error) {
       if (stake < 0.25) {
         setBetMessage("Minimal stake is 0.25€")
-      } 
+      }
       if (payout > 10000) {
         setBetMessage("Maximal payout is 10000€")
       }
-      if(stake > userData.balance) {
+      if (stake > userBalance) {
         setBetMessage("Insufficient funds")
       }
       setTimeout(() => {
         setBetMessage("")
       }, 2000)
     }
-  };
+  }
   
   return (
     <>
@@ -111,7 +115,10 @@ export default function BetSlip( {userData, betSlip, setBetSlip}) {
       </div>
       <input className="stake-input" 
         placeholder="Minimal stake is 0.25€" 
-        maxLength="6" value={stake} 
+        maxLength="6" 
+        type="number"
+        step="0.05"
+        value={stake}
         onChange={(e) => setStake(parseFloat(e.target.value))} />
       <input className="payment-button" 
         type="submit" 

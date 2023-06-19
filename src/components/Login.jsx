@@ -1,8 +1,10 @@
 import React, { useState } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
+import { useSetRecoilState, useRecoilValue  } from "recoil"
 import axios from "axios"
-import "./../styles/login.css"
+import "../styles/login.css"
+import {balanceState} from "./atoms"
 
 export default function Login({handleLoginResponse}) {
   const navigate = useNavigate()
@@ -17,6 +19,8 @@ export default function Login({handleLoginResponse}) {
     last_name: "",
     username: "",
   })
+  const setBalanceState = useSetRecoilState(balanceState)
+  const currentBalance = useRecoilValue(balanceState)
 
   const handleLogin = async (event) => {
     event.preventDefault()
@@ -36,6 +40,7 @@ export default function Login({handleLoginResponse}) {
       setLoggedUser(loggedUser)
       setIsLoggedIn(true)
       console.log(response)
+      setBalanceState(balance)
       handleLoginResponse(loggedUser)
     } catch(error) {
       console.error(error)
@@ -62,9 +67,7 @@ export default function Login({handleLoginResponse}) {
             )}
           </div>
           <div className="loggedUser-balance">
-            {loggedUser.balance && (
-              <span>Balance: €{loggedUser.balance}</span>
-            )}
+            {currentBalance && <div>Balance: €{currentBalance}</div>}
             <Link to="/add-funds">
               <button className="add-balance">Deposit</button>
             </Link>

@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, useMatch, useResolvedPath } from "react-router-dom"
 import Login from "./Login"
-import "./../styles/navbar.css"
+import "../styles/navbar.css"
 
 export default function Navbar({ handleLoginResponse }){
   return (
