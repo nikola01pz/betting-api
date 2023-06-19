@@ -96,6 +96,11 @@ type BetSlipRequest struct {
 	Bets     []Bet   `json:"bets"`
 }
 
+type AddFundsRequest struct {
+	Username string  `json:"username" `
+	Amount    float32 `json:"amount"`
+}
+
 type Bet struct {
 	OfferID int    `json:"offer"`
 	Tip     string `json:"tip"`

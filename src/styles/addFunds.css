@@ -58,4 +58,29 @@
     padding: 12px 12px;
     color: rgb(6, 8, 151);
     font-weight: bold;
+    border: none;
+    border-radius: 4px;
+}
+
+.addFunds-message{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+
+.addFunds-label {
+    display: inline-block;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+    text-align: left;
+    font-weight: 600;
+    color: rgb(6, 8, 151);
+    font-size: 1.25rem;
+}
+
+.details-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

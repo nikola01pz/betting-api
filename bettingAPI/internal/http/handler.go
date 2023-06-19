@@ -212,7 +212,7 @@ func (h *handler) HandleBetSlipRequest(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	body, err := io.ReadAll(r.Body)
 	if err != nil {
-		log.Printf("Error getting data from login form: %s", err)
+		log.Printf("Error getting data from bet slip request: %s", err)
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
@@ -273,6 +273,46 @@ func (h *handler) HandleBetSlipRequest(w http.ResponseWriter, r *http.Request) {
 	}
 
 	err = h.db.UpdateUserBalance(*user, user.Balance-betSlip.Stake)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	w.WriteHeader(http.StatusOK)
+}
+
+func (h *handler) HandleAddFundsRequest(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	body, err := io.ReadAll(r.Body)
+	if err != nil {
+		log.Printf("Error getting data from add funds request: %s", err)
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+	var addFunds mysql.AddFundsRequest
+	err = json.Unmarshal(body, &addFunds)
+	if err != nil {
+		log.Printf("Error unmarshalling data from add funds request: %s", err)
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+
+	if (addFunds.Amount > 1000) || (addFunds.Amount < 5) {
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+
+	user, err := h.db.FindUserByUsername(addFunds.Username)
+	if err != nil {
+		w.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+
+	if user == nil {
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+
+	err = h.db.UpdateUserBalance(*user, user.Balance+addFunds.Amount)
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
